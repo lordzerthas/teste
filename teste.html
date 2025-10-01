@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adrielle Leão Gospel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #3b0ca1; /* cor sólida inspirada no logo */
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px 20px 10px;
+    }
+
+    header img {
+      max-width: 120px;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin: 15px 0 5px;
+    }
+
+    p {
+      font-size: 1em;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      margin: 15px auto;
+      padding: 15px;
+      width: 85%;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+      color: #3b0ca1;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #f4ecff;
+    }
+
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px; /* margem em volta */
+      box-sizing: border-box;
+    }
+
+    .popup-content {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content h2 {
+      margin-top: 0;
+      color: #3b0ca1;
+    }
+
+    .popup-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .popup .btn {
+      background: #3b0ca1;
+      color: #fff;
+    }
+
+    .close {
+      float: right;
+      font-size: 1.4em;
+      cursor: pointer;
+      color: #3b0ca1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo Adrielle Leão">
+    <h1>Adrielle Leão</h1>
+    <p>Gospel</p>
+  </header>
+
+  <main>
+    <!-- Aqui você pode repetir os botões que existem no beacons -->
+    <button class="btn" onclick="openPopup()">Grupo no WhatsApp</button>
+    <a href="https://www.youtube.com/" target="_blank"><button class="btn">YouTube</button></a>
+    <a href="https://www.instagram.com/" target="_blank"><button class="btn">Instagram</button></a>
+    <a href="https://open.spotify.com/" target="_blank"><button class="btn">Spotify</button></a>
+    <!-- adicione mais botões conforme precisar -->
+  </main>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2>Como entrar no grupo</h2>
+      <p>Siga os passos após clicar em <b>Continuar</b>:</p>
+
+      <p><b>1.</b> Toque em <i>⋮</i> e escolha <b>Abrir no navegador</b>:</p>
+      <img src="passo1.png" alt="Passo 1">
+
+      <p><b>2.</b> Depois abra o WhatsApp normalmente:</p>
+      <img src="passo2.png" alt="Passo 2">
+
+      <button class="btn" onclick="continuar()">Continuar</button>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function continuar() {
+      // Aqui vai o link do grupo
+      window.open("https://chat.whatsapp.com/seu-link-do-grupo", "_blank");
+    }
+  </script>
+
+</body>
+</html>
