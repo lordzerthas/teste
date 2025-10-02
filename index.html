@@ -130,29 +130,47 @@
       <h2>Como entrar no grupo</h2>
       <p>Siga os passos após clicar em <b>Continuar</b>:</p>
 
-      <p><b>1.</b> Toque em <i>...</i> na perte superior:</p>
+      <p><b>1.</b> Toque em três pontinhos na parte superior:</p>
       <img src="src/passo1.png" alt="Passo 1">
 
       <p><b>2.</b> Depois toque em <b>Abrir no navegador</b>:</p>
       <img src="src/passo2.png" alt="Passo 2">
 
-      <button class="btn" onclick="continuar()">Continuar</button>
+      <button class="btn" id="grupo" onclick="continuar()">Entrar no grupo</button>
     </div>
   </div>
 
   <script>
     function openPopup() {
       document.getElementById('popup').style.display = 'flex';
+      history.replaceState(null, '', '?popup=true');
+      //document.getElementById('grupo').style.display ='none'
+      console.log(document.getElementById('grupo').style.display);
+      if(estaNoTikTok()){
+          document.getElementById('grupo').style.display = 'none';
+      }
     }
 
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
+      history.replaceState(null, '', window.location.pathname);
     }
 
     function continuar() {
       // Aqui vai o link do grupo
       window.open("https://chat.whatsapp.com/D2tpEFLtGcL91WWT6eDC2N", "_blank");
     }
+    function estaNoTikTok() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    // Verifica se o user agent contém "TikTok"
+    return /TikTok/i.test(ua);
+  }
+    window.addEventListener('load', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('popup') === 'true') {
+      openPopup();
+    }
+  });
   </script>
 
 </body>
