@@ -135,7 +135,8 @@
 
       <p><b>2.</b> Depois toque em <b>Abrir no navegador</b>:</p>
       <img src="src/passo2.png" alt="Passo 2">
-
+      
+      <p><b>3.</b>Depois de abrir no navegador, basta tocar em <b>Entrar no grupo</b></b>.</p>
       <button class="btn" id="grupo" onclick="continuar()">Entrar no grupo</button>
     </div>
   </div>
@@ -149,15 +150,14 @@
     }
 
     function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      history.replaceState(null, '', window.location.pathname);
+      window.location.href = "page_popup.html";
     }
 
     function continuar() {
       // Aqui vai o link do grupo
       window.open("https://chat.whatsapp.com/D2tpEFLtGcL91WWT6eDC2N", "_blank");
     }
-   function estaNoTikTok() {
+    function estaNoTikTok() {
       const regex = /musical_ly|bytedance/i; 
       var ua = navigator.userAgent || navigator.vendor || window.opera;
       //var ua ="Mozilla/5.0 (Linux; Android 14; SM-S911B Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/140.0.7339.207 Mobile Safari/537.36 musical_ly_2024109030 AppName/musical_ly ByteLocale/pt";
