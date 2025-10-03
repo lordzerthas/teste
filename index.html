@@ -128,7 +128,7 @@
     <div class="popup-content">
       <span class="close" onclick="closePopup()">&times;</span>
       <h2>Como entrar no grupo</h2>
-      <p>Siga os passos após clicar em <b>Continuar</b>:</p>
+      <p>O link de convite não funciona no navegador do TikTok. Para entrar no grupo, siga o passo a passo abaixo.</p>
 
       <p><b>1.</b> Toque em três pontinhos na parte superior:</p>
       <img src="src/passo1.png" alt="Passo 1">
@@ -143,7 +143,8 @@
   <script>
     function openPopup() {
       document.getElementById('popup').style.display = 'flex';
-      history.replaceState(null, '', '?popup=true');
+      location.hash = "popup";
+      //history.replaceState(null, '', '?popup=true');
       //document.getElementById('grupo').style.display ='none'
       console.log(document.getElementById('grupo').style.display);
       if(estaNoTikTok()){
@@ -167,7 +168,7 @@
   }
     window.addEventListener('load', () => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get('popup') === 'true') {
+    if (location.hash === "#popup") {
       openPopup();
     }
   });
