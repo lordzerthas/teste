@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adrielle Leão</title>
@@ -8,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: #544474; /* cor sólida inspirada no logo */
+      background: #9382b4; /* cor sólida inspirada no logo */
       color: #fff;
       text-align: center;
     }
@@ -18,7 +19,7 @@
     }
 
     header img {
-      max-width: 120px;
+      max-width: 240px;
     }
 
     h1 {
@@ -32,21 +33,32 @@
       margin-bottom: 30px;
     }
 
-    .btn {
-      display: block;
-      margin: 15px auto;
-      padding: 15px;
-      width: 85%;
-      border: none;
-      border-radius: 12px;
-      background: #fff;
-      color: #3b0ca1;
-      font-size: 1.1em;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+.btn {
+  position: relative; /* necessário para posicionar o ícone */
+  display: block;
+  margin: 15px auto;
+  padding: 15px;
+  width: 85%;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  color: #3b0ca1;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  max-width: 400px;
+  text-align: center; /* mantém o texto centralizado */
+}
+
+.btn i {
+  position: absolute;
+  left: 15px; /* distância do ícone da borda */
+  top: 50%;
+  transform: translateY(-50%); /* centraliza verticalmente */
+  font-size: 1.3em; /* tamanho do ícone */
+}
 
     .btn:hover {
       transform: scale(1.05);
@@ -111,17 +123,28 @@
 
   <header>
     <img src="src/logo.png" alt="Logo Adrielle Leão">
-    <h1>Adrielle Leão</h1>
+    <!--h1>Adrielle Leão</h1-->
   </header>
 
-  <main>
-    <!-- Aqui você pode repetir os botões que existem no beacons -->
-    <button class="btn" onclick="openPopup()">Nosso grupo no WhatsApp</button>
-    <a href="https://youtube.com/@adrielleleaoo" target="_blank"><button class="btn">YouTube</button></a>
-    <a href="https://www.instagram.com/adrielle.leaoo" target="_blank"><button class="btn">Instagram</button></a>
-    <a href="https://www.tiktok.com/coin" target="_blank"><button class="btn">Diamantes com 25% OFF</button></a>
-    <!-- adicione mais botões conforme precisar -->
-  </main>
+<main>
+    <button class="btn" onclick="openPopup()">
+      <i class="fab fa-whatsapp"></i> Nosso grupo no WhatsApp
+    </button>
+
+    <button class="btn" onclick="window.open('https://youtube.com/@adrielleleaoo','_blank')">
+      <i class="fab fa-youtube"></i> YouTube
+    </button>
+
+    <button class="btn" onclick="window.open('https://www.instagram.com/adrielle.leaoo','_blank')">
+      <i class="fab fa-instagram"></i> Instagram
+    </button>
+
+    <button class="btn" onclick="window.open('https://www.tiktok.com/coin','_blank')">
+      <i class="fab fa-tiktok"></i> Diamantes com 25% OFF
+    </button>
+</main>
+
+
 
   <!-- POPUP -->
   <div class="popup" id="popup">
