@@ -157,10 +157,10 @@
       // Aqui vai o link do grupo
       window.open("https://chat.whatsapp.com/D2tpEFLtGcL91WWT6eDC2N", "_blank");
     }
-   function estaNoTikTok() {
+    function estaNoTikTok() {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
-      document.getElementById('tes').innerText=navigator.userAgent;
-      return /TikTok|Musical\.ly|Bytedance/i.test(ua);
+      ua = ua.toLowerCase();
+      return ua.includes("musical_ly") || ua.includes("bytedance");
     }
     window.addEventListener('load', () => {
     const params = new URLSearchParams(window.location.search);    
