@@ -142,15 +142,11 @@
 
   <script>
     function openPopup() {
-     window.location.href = "page_popup.html";
-     /* document.getElementById('popup').style.display = 'flex';
-      location.hash = "popup";
-      //history.replaceState(null, '', '?popup=true');
-      //document.getElementById('grupo').style.display ='none'
+      document.getElementById('popup').style.display = 'flex';  
       console.log(document.getElementById('grupo').style.display);
       if(estaNoTikTok()){
           document.getElementById('grupo').style.display = 'none';
-      }*/
+      }
     }
 
     function closePopup() {
@@ -168,10 +164,8 @@
     return /TikTok/i.test(ua);
   }
     window.addEventListener('load', () => {
-    const params = new URLSearchParams(window.location.search);
-    if (location.hash === "#popup") {
-      openPopup();
-    }
+    const params = new URLSearchParams(window.location.search);    
+      openPopup();    
   });
   </script>
 
